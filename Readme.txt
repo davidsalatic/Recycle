@@ -1,6 +1,6 @@
 .NET Web Application (MVC) for displaying Recycle locations in a country
 
-Users can view the locations and filtrate the results by the City they choose
+Users can view the locations and filtrate the results by the city they choose
 
 The app has an admin side, which uppon logging in can add, edit, or remove an existing location
 The administrator can also add new Materials that can be recycled
