@@ -1,0 +1,117 @@
+﻿body {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    font-family: 'Kristen ITC';
+}
+
+.body-content {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+}
+
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+input,select,textarea {
+    max-width: 280px;
+}
+
+.navbar {
+    background-color: darkolivegreen;
+    border: none;
+}
+
+.top-nav-collapse {
+    background-color: #2E2E2E;
+    color: black;
+}
+
+
+
+.description {
+    padding-top: 10%;
+    color: black;
+}
+
+hr{
+    border-color:black;
+}
+
+div.description>a{
+    background-color:black;
+    color:white;
+    font-family:'Kristen ITC';
+    border-color:black;
+}
+
+div.description>a:hover{
+    background-color:darkgreen;
+    color:white;
+    border-color:darkgreen;
+}
+
+#contactText{
+    padding-top:5%;
+    padding-bottom:10%
+}
+
+
+.navbar-inverse .navbar-nav > li > a {
+    font-family: 'Kristen ITC';
+    color: darkseagreen;
+    font-size: medium;
+}
+.navbar-inverse .navbar-nav > li > a:hover {
+    color: forestgreen;
+}
+
+.separated{
+    margin-top:5%;
+    margin-left:5%;
+}
+
+.table-reciklaznomesto {
+    margin-bottom: 50%;
+    color: black;
+    background-color:antiquewhite;
+}
+
+#view-reciklaznomesto {
+
+    background: url('../images/dodavanje-novog-rm-pozadina.jpg')no-repeat center center fixed;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:100%;
+
+}
+
+#view-index {
+    background: url('../images/reciklaza-pozadina.jpg')no-repeat center center fixed;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+
+.view-contact {
+    background: url('../images/pozadina-contact.jpg')no-repeat center center fixed;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+
+.reciklazno-mesto img {
+    float: left;
+}
+
+.card{
+    background-color:antiquewhite;
+}

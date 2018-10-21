@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+            </div>
+           
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <a href="@Url.Action("Index", "Home")" , class="navbar-left"><img height="40" width="40" src="~/Images/logo.png" /></a>
+                    <li>@Html.ActionLink("Naslovna", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Lokacije", "Index", "ReciklaznoMesto")</li>
+                    <li>@Html.ActionLink("Kontakt", "Contact", "Home")</li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    @{if (Session["Id"] != null) //ako je ulogovan
+                        {
+                            <li>@Html.ActionLink("Dodaj lokaciju", "Create", "ReciklaznoMesto")</li>
+                            <li>@Html.ActionLink("Materijali", "Create", "Materijal")</li>
+                            <li><a href="@Url.Action("LogOut", "Admin")"><i class="fa fa-unlock"></i></a></li>
+                        }
+
+                        else
+                        {
+                            <li><a href="~/Admin/Login"><i class="fa fa-lock"></i></a></li>
+                        }
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    @RenderSection("scripts", required: false)
+</body>
+</html>

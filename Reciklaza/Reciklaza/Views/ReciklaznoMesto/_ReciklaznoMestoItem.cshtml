@@ -1,0 +1,58 @@
+﻿@model Reciklaza.Data.Models.ReciklaznoMesto
+<tr>
+    <td>
+        <div class="reciklazno-mesto" style="margin-bottom:1%;">
+            <img hspace="5" src="~/images/reciklazno-mesto-slicica.png" alt="">
+            <h3>"@Html.DisplayFor(modelItem => Model.Naziv)"</h3>
+            <p>
+                @{
+                    if (Model.NazivMaterijala.ToLower().Substring(0, 4) == "papi")
+                    {
+                        <img height="20" width="20" alt="Image" src="@Url.Content("~/images/icon-paper.png")" />
+                    }
+                    else if (Model.NazivMaterijala.ToLower().Substring(0, 4) == "plas")
+                    {
+                        <img height="20" width="20" alt="Image" src="@Url.Content("~/images/icon-plastic.png")" />
+                    }
+                    else if (Model.NazivMaterijala.ToLower().Substring(0, 4) == "stak")
+                    {
+                        <img height="20" width="20" alt="Image" src="@Url.Content("~/images/icon-glass.png")" />
+                    }
+                    else if (Model.NazivMaterijala.ToLower().Substring(0, 4) == "meta" || Model.NazivMaterijala.ToLower().Substring(0, 4) == "gvoz" || Model.NazivMaterijala.ToLower().Substring(0, 4) == "alum")
+                    {
+                        <img height="20" width="20" alt="Image" src="@Url.Content("~/images/icon-metal.png")" />
+                    }
+                    else if (Model.NazivMaterijala.ToLower().Substring(0, 4) == "elek")
+                    {
+                        <img height="20" width="20" alt="Image" src="@Url.Content("~/images/icon-electronic.png")" />
+                    }
+                    else if (Model.NazivMaterijala.ToLower().Substring(0, 3) == "hem")
+                    {
+                        <img height="20" width="20" alt="Image" src="@Url.Content("~/images/icon-chemical.png")" />
+                    }
+                    else
+                    {
+                        <img height="20" width="20" alt="Image" src="@Url.Content("~/images/icon-default.png")" />
+                    }
+                    <strong>@Html.DisplayFor(modelItem => Model.CenaPoKg) din/kg</strong>
+                }
+                <br />
+                <strong>@Html.DisplayNameFor(model => model.Grad):</strong> @Html.DisplayFor(modelItem => Model.Grad)
+                <br />
+                <strong>@Html.DisplayNameFor(model => model.Adresa):</strong> @Html.DisplayFor(modelItem => Model.Adresa)
+                <br />
+                <strong>@Html.DisplayNameFor(model => model.NazivMaterijala):</strong> @Html.DisplayFor(modelItem => Model.NazivMaterijala)
+                <br />
+                <br />
+                @Html.ActionLink("Detaljnije", "Details", new { id = Model.Id }, new { @class = "btn btn-success btn-lg" })
+                <br />
+                @{ if (Session["Id"] != null)
+                    {
+                        <i class="fa fa-edit" style="margin-top:7px;">  </i>@Html.ActionLink("Izmeni", "Edit", new { id = Model.Id })
+<i class="fa fa-trash">  </i>@Html.ActionLink("Obriši", "Delete", new { id = Model.Id })
+}
+                }
+            </p>
+        </div>
+    </td>
+</tr>

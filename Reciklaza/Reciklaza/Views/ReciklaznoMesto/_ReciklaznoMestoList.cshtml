@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Reciklaza.Data.Models.ReciklaznoMesto>
+@using Reciklaza.Data
+@using Reciklaza.Data.Models
+
+
+@{
+    ReciklazaContext db = new ReciklazaContext();
+    List<ReciklaznoMesto> listaReciklaznihMesta = db.ReciklaznaMesta.ToList();
+
+    List<SelectListItem> list = new List<SelectListItem>();
+
+    foreach (ReciklaznoMesto mesto in listaReciklaznihMesta)
+    {
+        bool saveToList = true;
+        foreach (SelectListItem selectItem in list)
+        {
+            if (mesto.Grad == selectItem.Text)//provera da se grad ne javlja 2 puta u Dropdownu
+            {
+                saveToList = false; //nemoj ubaciti taj grad u drop down kasnije
+                break;
+            }
+        }
+        if (saveToList == true)
+        {
+            list.Add(new SelectListItem() { Text = mesto.Grad });
+        }
+    }
+}
+
+<div id="view-reciklaznomesto">
+    <div class="container">
+        <div style="background-color:darkgrey;margin-top:15%;">
+            @using (Html.BeginForm("Filter", "ReciklaznoMesto", FormMethod.Post))
+            {
+                <div class="text-center">@Html.DropDownList("Grad", list, "Svi gradovi", new { onchange = @"this.form.submit()" })</div>
+            }
+        </div>
+        <table class="table table-reciklaznomesto">
+            @foreach (var item in Model)
+            {
+                Html.RenderPartial("_ReciklaznoMestoItem", item);
+            }
+        </table>
+    </div>
+</div>

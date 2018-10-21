@@ -1,0 +1,24 @@
+﻿@model Reciklaza.Data.Models.Materijal
+
+@{
+    if (Session["Id"] == null)
+    {
+        Response.Redirect("~/Admin/Login");
+    }
+    ViewBag.Title = "Brisanje materijala";
+}
+
+
+<div style="margin-top:7%;margin-left:5%;">
+    <h2>Obriši materijal "@Html.DisplayFor(model => model.Naziv)"?</h2>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-actions no-color" style="margin-top:2%;">
+            <input type="submit" value="Obriši" class="btn btn-success btn-lg" style="margin-right:1%;" />
+            <a href="~/Materijal/Index" class="btn btn-warning btn-lg">Otkaži</a>
+        </div>
+
+    }
+</div>

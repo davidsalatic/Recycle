@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Reciklaza.Data.Models.Materijal>
+
+@{
+    if (Session["Id"] == null)
+    {
+        Response.Redirect("~/Admin/Login");
+    }
+    ViewBag.Title = "Lista materijala";
+}
+
+<table class="table separated">
+    <tr>
+        <th colspan="2">
+            <h1>Lista materijala</h1>
+            @Html.ActionLink("Dodaj novi","Create","Materijal")
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td width="10%">
+            <h3>"@Html.DisplayFor(modelItem => item.Naziv)"</h3>
+        </td>
+        <td>
+            <br />
+            @Html.ActionLink("Preimenuj", "Edit", new { id = item.Id }) |
+            @Html.ActionLink("Obriši", "Delete", new { id = item.Id })
+        </td>
+    </tr>
+}
+
+</table>
