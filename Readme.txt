@@ -11,7 +11,3 @@ Users can calculate their profit in a mini calculator in each of the locations d
 
 
 LANGUAGE: Serbian
-
-
-CREDITS:
--icons8.com for icons in app
