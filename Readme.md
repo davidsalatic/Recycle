@@ -1,6 +1,6 @@
 # Reciklaza
 
-## **_.NET Web Application (MVC) for displaying Recycle locations in a country**_
+## **_.NET Web Application (MVC) for displaying Recycle locations in a country_**
 
 ### Features:
 - Users can view the locations and filtrate the results by the city they choose
