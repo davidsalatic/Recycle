@@ -11,6 +11,6 @@
 ## Demo:
 ![](demo.gif)
 
-### built for the purposes of learning web application development
+### Built for the purposes of learning web application development
 
 **LANGUAGE:** Serbian
