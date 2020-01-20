@@ -11,6 +11,6 @@
 ## Demo:
 ![](demo.gif)
 
-**Preview of the app can be seen in the 'Screenshots' folder in the project.**
+**built for the purposes of learning web application development**
 
 **LANGUAGE:** Serbian
